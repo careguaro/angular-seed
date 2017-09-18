@@ -1,0 +1,18 @@
+version: '2'
+##  No modificar este archivo
+services:
+ app:
+    tty: true
+    privileged: true
+    container_name: angularjs-app
+    hostname: angularjs-host
+    mem_limit: "4G"
+    memswap_limit: "4G"
+    cpuset: "3"
+    image: node:boron
+    #command: npm start
+    ports:
+      - "8000:8000"
+    restart: always
+    volumes:
+      - "./:/usr/src/angular-app"
